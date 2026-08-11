@@ -14084,25 +14084,6 @@
       }
     });
 
-    let touchStartX = 0, touchStartY = 0;
-    const cardsContainer = document.getElementById('cards-container');
-    cardsContainer.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-      touchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
-
-    cardsContainer.addEventListener('touchend', (e) => {
-      const touchEndX = e.changedTouches[0].screenX;
-      const touchEndY = e.changedTouches[0].screenY;
-      const diffX = touchEndX - touchStartX;
-      const diffY = touchEndY - touchStartY;
-
-      if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
-        if (diffX > 0) navigate(-1);
-        else navigate(1);
-      }
-    }, { passive: true });
-
     updateDisplay();
   </script>
 </body>
